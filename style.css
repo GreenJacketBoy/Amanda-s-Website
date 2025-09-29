@@ -1,13 +1,13 @@
 :root {
-  --bg-color: white;
+  --bg-color: rgb(141, 232, 255);
   --island-bg-color: rgb(233, 227, 114);
   --island-color: rgb(0, 93, 105);
   --island-hr-bg: rgb(244, 240, 160);
 }
 
 html {
+  background-color: var(--bg-color);
   font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
-
 }
 
 .main {
@@ -15,13 +15,10 @@ html {
   min-width: 100%;
 }
 
-.centered-island {
+.island {
   display: flex;
   flex-direction: column;
-
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
 
   background-color: var(--island-bg-color);
   color: var(--island-color);
@@ -30,19 +27,58 @@ html {
   padding: 10px;
 }
 
-  .centered-island hr {
+  .island hr {
     width: 95%;
     color: transparent;
     background-color: var(--island-hr-bg);
     height: 2px;
   }
 
-  .centered-island .pic-and-infos {
+  .island .pic-and-infos {
     display: flex;
     flex-direction: row;
-
   }
 
-    .centered-island .pic-and-infos img {
+    .island .pic-and-infos img {
       border: 2px solid blue;
     }
+
+.centered-island {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.islands-slider {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  overflow-x: scroll;
+}
+
+  .islands-slider .project {
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 500px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+    .islands-slider .project .pic-and-name {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      
+      padding-left: 10px;
+    }
+
+      .islands-slider .project .pic-and-name img {
+        max-width: 25%;
+        border-radius: 15px;
+      }
+    
+      .description {
+        margin: 10px;
+        margin-top: 5px;
+      }
