@@ -1,10 +1,12 @@
 :root {
   --bg-color: rgb(141, 232, 255);
-  --nav-group-bg-color: var(--island-hr-bg);
-  --nav-border-group-color: rgb(224, 200, 42);
-  --island-bg-color: rgb(233, 227, 114);
-  --island-color: rgb(0, 93, 105);
-  --island-hr-bg: rgb(244, 240, 160);
+  --nav-group-bg-color: var(--island-bg-color);
+  --nav-border-group-color: var(--island-hr-bg);
+  --island-bg-color: rgba(37, 66, 84, 0.83);
+  --island-bg-color-opaque: rgb(37, 66, 84);
+  --island-color: rgb(90, 231, 214);
+  --island-anchor-color: rgb(0, 242, 255);
+  --island-hr-bg: rgba(38, 56, 85, 0.65);
 }
 
 html {
@@ -88,10 +90,15 @@ nav {
 
   background-color: var(--island-bg-color);
   color: var(--island-color);
+  backdrop-filter: blur(8px);
   
   border-radius: 15px;
   padding: 10px;
 }
+
+  .island a {
+    color: var(--island-anchor-color);
+  }
 
   .island hr {
     width: 95%;
@@ -134,6 +141,9 @@ nav {
     max-width: 500px;
     min-width: 500px;
 
+    transition-timing-function: cubic-bezier(.27,1.1,.91,.99);
+    transition-duration: 1.7s;
+    
     margin-left: 5px;
     margin-right: 5px;
   }
@@ -155,6 +165,10 @@ nav {
         margin: 10px;
         margin-top: 5px;
       }
+  
+  .islands-slider .project:hover {
+    background-color: var(--island-bg-color-opaque);
+  }
 
 .centered-title {
   display: flex;
