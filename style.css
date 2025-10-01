@@ -7,6 +7,7 @@
   --island-color: rgb(90, 231, 214);
   --island-anchor-color: rgb(0, 242, 255);
   --island-hr-bg: rgba(38, 56, 85, 0.65);
+  --max-width-global: 900px;
 }
 
 html {
@@ -48,13 +49,29 @@ nav {
   position: fixed;
   top: 0;
   
-  justify-content: center;
-  align-items: start;
   min-width: 100%;
-  gap: 4%;
 }
 
-  nav .nav-group {
+  nav .nav-limiter {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    max-width: var(--max-width-global);
+    margin-left: auto;
+    margin-right: auto;
+
+    justify-content: center;
+    align-items: start;
+    gap: 4%;
+  }
+
+  /* @media only screen and (max-width: 600px) {
+    nav .nav-limiter {
+      background-color: lightblue;
+    }
+  } */
+
+  nav .nav-limiter .nav-group {
     display: flex;
     justify-content: center;
     
@@ -67,7 +84,7 @@ nav {
     border-bottom-right-radius: 10px;
     cursor: default;
     
-    min-width: 13%;
+    min-width: 25%;
     max-height: min-content;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -76,7 +93,7 @@ nav {
     transition-timing-function: cubic-bezier(.27,1.1,.91,.99);
   }
 
-  nav .nav-group.current, nav .nav-group:hover {    
+  nav .nav-limiter .nav-group.current, nav .nav-limiter .nav-group:hover {    
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -86,7 +103,7 @@ nav {
 .island {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  max-width: var(--max-width-global);
 
   background-color: var(--island-bg-color);
   color: var(--island-color);
