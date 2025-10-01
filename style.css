@@ -124,6 +124,12 @@ nav {
     height: 2px;
   }
 
+  .island input {
+    background-color: var(--island-bg-color);
+    color: var(--island-anchor-color);
+    border-color: var(--island-hr-bg);
+  }
+
   .island .pic-and-infos {
     display: flex;
     flex-direction: row;
@@ -137,7 +143,15 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 5%;
+    padding: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .island .paragraphs-container p {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
 
 .centered-island {
